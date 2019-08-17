@@ -1,3 +1,4 @@
-require_relative 'time_format'
+require_relative 'time'
+require_relative 'format'
 
-run TimeFormat.new
+run Time.new
