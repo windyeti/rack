@@ -5,23 +5,6 @@ class TimeFormatter
     @env = env
   end
 
-  def status
-    return 400 unless correct_query?
-    200
-  end
-
-  def headers
-    { 'Content-Type' => 'text/plain', 'Content-Length' => "#{body.join('').length}" }
-  end
-
-  def body
-    if correct_query?
-      body_template
-    else
-      ["Unknown time format", " #{diff_arrays}"]
-    end
-  end
-
   def arr_query
     query = Rack::Utils.parse_nested_query(@env['QUERY_STRING'])
     return [] if query.empty? || query["format"].empty?
