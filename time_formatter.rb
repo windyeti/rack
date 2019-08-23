@@ -11,12 +11,12 @@ class TimeFormatter
     query["format"].split(',')
   end
 
-  def diff_arrays
+  def bad_array
     (arr_query - TIME_ITEMS.map { |key, _value| key.to_s })
   end
 
   def correct_query?
-    diff_arrays.empty?
+    bad_array.empty?
   end
 
   def body_template

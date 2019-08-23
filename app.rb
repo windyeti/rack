@@ -20,7 +20,7 @@ class App
     if  @formatter.correct_query?
       @formatter.body_template
     else
-      ["Unknown time format", " #{ @formatter.diff_arrays}"]
+      ["Unknown time format", " #{ @formatter.bad_array}"]
     end
   end
 end
